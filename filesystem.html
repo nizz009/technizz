@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>C++17 Filesystem</title>
+		<link rel="stylesheet" href="Assets/Stylesheets/3rd party/bootstrap.min.css">
+		<link rel="stylesheet" href="Assets/Stylesheets/3rd party/prism.css">
+		<link rel="stylesheet" href="Assets/Stylesheets/main.css">
+		<script type="text/javascript" src="Assets/Scripts/3rd party/prism.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="Assets/Icons/logo.PNG">
+		<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bai+Jamjuree&family=Barlow+Condensed&family=Cairo:wght@600&family=Gruppo&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!--Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  			<span class="navbar-brand">Technizz</span>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  			</button>
+
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+    				<li class="nav-item">
+        				<a class="nav-link" href="index.html">About</a>
+     	 			</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="topics.html">Topics</a>
+      				</li>
+    			</ul>
+  			</div>
+  			<a class="contact" href="https://www.linkedin.com/in/nirali-sahoo-11d2001y08m/" target="_blank" title="LinkedIn"><img src="Assets/Icons/linkedin.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+  			<a class="contact" href="https://github.com/nizz009" target="_blank" title="Github"><img src="Assets/Icons/github.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+		</nav>
+
+		<!--Heading-->
+		<h1>Filesystem (C++17)</h1>
+
+		<!--Sections-->
+		<section class="sortarticle">
+			<h2>Introduction</h2>
+			<p>So, as it can be known from the title, it was first introduced in C++17. This came with many new and simplified functions and operations which reduced the many lines of code that were necessary in the previous versions of C++ (A comparison between the programs in C++11 and using C++17's filesystem is elaborated in <a href="https://carlosvin.github.io/posts/recursive-directory-iterator/en/" target="_blank">Carlos's Filesystem in C++17</a>). For a while, filesystem was not a standard C++ header. Hence, many compilers or text editors (usually the older versions) may not be able to execute the program succesfully or may require a different header file (which is discussed next).</p>
+
+			<h2>Compatibility and Compilation</h2>
+			<!--<p>Wanna jump to the functions first? Before that, let's assume a situation where you have written a code which you are highly confident about. But the moment you try to compile it, the compiler shows an error! You spend hours figuring out your mistake and finally, you realise that the compiler didn't recognise the header file. That's why, compatibility with the compilers is something I consider as the most important thing.</p>-->
+
+			<p>Did you ever stumble across two different kinds of headers (<code id="program" class="language-c++">include &lt;experimental/filesystem&gt;</code> and <code id="program" class="language-c++">include &lt;filesystem&gt;</code>) and wondered why there were two? Well, here's the answer:<br>(Don't worry if you haven't though. You will know all about it now:)</p>
+
+			<p>Back when filesystem was still a pre-standard header, compilers like GCC v6 and v7 supported the "Filesystem Technical Specification" which was defined in the <code id="program" class="language-c++">&lt;experimental/filesystem&gt;</code> header. After it was given the status of standardized C++ header, the compilers since then supported the <code id="program" class="language-c++">&lt;filesystem&gt;</code> header.</p>
+
+			<p>So, now that we know the difference between the headers, let's go to the compilation!</p>
+			<p>Firstly, the compiler needs to know that we are using C++17. We can do so using <code id="program" class="language-c++">-c++1z</code> after calling the compiler. Secondly, with the pre-standard versions, <code id="program" class="language-c++">-lstdc++fs</code> is added at the end of the command making the compilation command look like: <br> <code id="program" class="language-c++">g++ -std=c++1z main.cpp -lstdc++fs</code><br>This is also supported clang++.</p>
+			<p>GCC v8 and higher versions support the <code id="program" class="language-c++">&lt;filesystem&gt;</code> implementation with the <code id="program" class="language-c++">-std=c++17</code> flag.</p>
+
+			<h2>Functions</h2>
+			<p>Now that we know how to compile our program and check if our functions are all right, let's move to the most interesting part: <i>Filesystem Functions</i>!</p>
+
+			<p><h4>Note:</h4> We need to call the functions using the <code id="program" class="language-c++">std::experimental::filesystem</code> (for older versions of compiler that support pre-standard filesystem header) and <code id="program" class="language-c++">std::filesystem</code> (for those supporting the standard filesystem header). So in order to reduce our efforts, we define it as: <br> <code id="program" class="language-c++">namespace fs = std::experimental::filesystem</code> <br> or <br> <code id="program" class="language-c++">namespace fs = std::filesystem</code></p>
+		</section>
+
+		<!--footer-->
+		<footer>
+			<small>&copy; All rights reserved.</small>
+		</footer>
+	</body>
+</html>
