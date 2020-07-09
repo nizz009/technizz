@@ -1,0 +1,88 @@
+/*
+	======================================
+	Navbar
+	======================================
+*/
+.navbar {
+	border-bottom: 1px solid #F5BB83;
+	background-color: #fff;
+}
+.navbar-brand {
+	font-family: "Bad Script";
+	padding-right: 10px;
+	color: #F59F5E;
+	font-size: 36px;
+}
+.navbar-custom a:hover {
+	colour: #000;
+}
+.nav-link {
+	color: #70778A;
+	font-family: "Gruppo";
+	font-size: 20px;
+}
+.nav-item a:hover {
+	color: #000;
+}
+.contact {
+	padding: 5px;
+}
+.active {
+	color: #000;
+}
+/*
+	======================================
+	Sections
+	======================================
+*/
+.center {
+	position: absolute;
+ 	top: 25%;
+ 	bottom: 25%;
+}
+h1 {
+	font-family: "Bai Jamjuree";
+	text-align: center;
+	padding: 15px;
+	color: #585F70;
+}
+.sortarticle {
+	font-family: "Tenali Ramakrishna";
+	font-size: 22px;
+	padding: 10px;
+	margin: auto auto;
+	width: 90%;
+}
+.sortarticle h2 {
+	font-family: "Cairo";
+	font-size: 30px;
+}
+.sortarticle h3 {
+	font-family: "Barlow Condensed";
+}
+.sortarticle a:hover {
+	text-decoration: none;
+}
+.topics {
+	font-size: 28px;
+}
+.topics a {
+	color: #F5916A;
+}
+.topics a:hover {
+	text-decoration: none;
+	color: #F55E00;
+}
+/*
+	======================================
+	Footer
+	======================================
+*/
+footer {
+	text-align: center;
+	border-top: 1px solid #F5BB83;
+	color: #F59F5E;
+  	font-size: 16px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
