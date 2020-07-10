@@ -60,6 +60,19 @@ h1 {
 .sortarticle h3 {
 	font-family: "Barlow Condensed";
 }
+.sortarticle h4 {
+	font-size: 30px;
+}
+.sortarticle h5 {
+	font-family: "Exo 2";
+	font-size: 20px;
+	text-decoration: underline;
+}
+.sortarticle h6 {
+	display: inline-block;
+	font-size: 24px;
+	text-decoration: underline;
+}
 .sortarticle a:hover {
 	text-decoration: none;
 }
@@ -75,6 +88,39 @@ h1 {
 }
 /*
 	======================================
+	Code
+	======================================
+*/
+pre, code {
+  font-family: monospace, monospace;
+}
+pre > code {
+  display: block;
+  word-wrap: normal;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+	width: 80%;
+  	direction: ltr;
+  	text-align: left;
+  	white-space: pre;
+  	word-spacing: normal;
+  	word-break: normal;
+  	word-wrap: normal;
+  	line-height: 1.5;
+  	-moz-tab-size: 2; -o-tab-size: 2; tab-size: 2;
+  	-webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none;
+}
+pre {
+  overflow: hidden;
+  resize: horizontal;
+  min-width: 100%
+}
+#program {
+	font-size: 16px;
+}
+/*
+	======================================
 	Footer
 	======================================
 */
@@ -82,6 +128,7 @@ footer {
 	text-align: center;
 	border-top: 1px solid #F5BB83;
 	color: #F59F5E;
+	background-color: #fff;
   	font-size: 16px;
 	padding-bottom: 20px;
 	padding-top: 20px;
