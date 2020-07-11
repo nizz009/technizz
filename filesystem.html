@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="Assets/Stylesheets/main.css">
 		<script type="text/javascript" src="Assets/Scripts/3rd party/prism.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="Assets/Icons/logo.png">
+		<link rel="icon" href="Assets/Icons/logo.PNG">
 		<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bai+Jamjuree&family=Barlow+Condensed&family=Cairo:wght@600&family=Gruppo&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 	</head>
@@ -39,7 +39,7 @@
 		<section class="sortarticle">
 			<h2>Introduction</h2>
 			<p>
-				So, as it can be known from the title, it was first introduced in C++17. This came with many new and simplified functions and operations which reduced the many lines of code that were necessary in the previous versions of C++ (A comparison between the programs in C++11 and using C++17's filesystem is elaborated in <a href="https://carlosvin.github.io/posts/recursive-directory-iterator/en/" target="_blank">Carlos's Filesystem in C++17</a>). For a while, filesystem was not a standard C++ header. Hence, many compilers or text editors (usually the older versions) may not be able to execute the program succesfully or may require a different header file (which we shall discuss next).
+				So, as it can be known from the title, filesystem was first introduced in C++17. This came with many new and simplified functions and operations which reduced the many lines of code that were necessary in the previous versions of C++ (A comparison between the programs in C++11 and using C++17's filesystem is elaborated in <a href="https://carlosvin.github.io/posts/recursive-directory-iterator/en/" target="_blank">Carlos's Filesystem in C++17</a>). For a while, filesystem was not a standard C++ header. Hence, many compilers or text editors (usually the older versions) may not be able to execute the program succesfully or may require a different header file (which we shall discuss next).
 			</p>
 
 			<h2>Compatibility and Compilation</h2>
@@ -55,13 +55,13 @@
 				So, now it's time for the compilation!
 			</p>
 			<p>
-				Firstly, the compiler needs to know that we are using C++17. We can do so using <code id="program" class="language-c++">-c++1z</code> after calling the compiler. Secondly, with the pre-standard versions, <code id="program" class="language-c++">-lstdc++fs</code> is added at the end of the command making the compilation command look like: <br> <code id="program" class="language-c++">g++ -std=c++1z main.cpp -lstdc++fs</code>
+				Firstly, the compiler needs to know that we are using C++17. We can do so using <code id="program" class="language-c++">-c++1z</code> after calling the compiler. Secondly, with the pre-standard versions, <code id="program" class="language-c++">-lstdc++fs</code> is added at the end of the compilation command making it look like: <br> <code id="program" class="language-c++">g++ -std=c++1z main.cpp -lstdc++fs</code>
 			</p>
 			<p>
 				GCC v8 and higher versions support the <code id="program" class="language-c++">&lt;filesystem&gt;</code> implementation with the <code id="program" class="language-c++">-std=c++17</code> flag.
 			</p>
 			<p>
-				Now, talking about the compilers other than GCC; Clang lib++ v7, MSVC Standard Library 19.14 (Visual Studio 15.7), Apple Clang 10.0.0 and Embarcadero C++ Builder 10.3 and their respective higher versions support filesystem while it has still not been a part Cray's and Sun/Oracle's C++ standard libraries.
+				Now, talking about the compilers other than GCC; Clang lib++ v7, MSVC Standard Library 19.14 (Visual Studio 15.7), Apple Clang 10.0.0 and Embarcadero C++ Builder 10.3 and their respective higher versions support filesystem while it has still not been a part of Cray's and Sun/Oracle's C++ standard libraries.
 
 			<h2>Functions</h2>
 			<p>
@@ -78,7 +78,7 @@
 
 				<ol>
 					<li>
-						<h4>Retreiving parts of file path:</h4>
+						<h4>Retrieving parts of file path:</h4>
 						<p>
 							<pre>
 								<code id="program" class="language-c++">
@@ -346,15 +346,15 @@
 
 									int main()
 									{
-										//Let's assume none of the directories existed before. Hence, we create them first.
-										fs::create_directories("It/creates/four/directories");
+											//Let's assume none of the directories existed before. Hence, we create them first.
+											fs::create_directories("It/creates/four/directories");
 
-										//Deletes all the children directories of "It", including itself ("It")
-										fs::remove_all("It");
+											//Deletes all the children directories of "It", including itself ("It")
+											fs::remove_all("It");
 
-										system("ls -la");
+											system("ls -la");
 
-										return EXIT_SUCCESS;
+											return EXIT_SUCCESS;
 									}
 								</code>
 							</pre>
@@ -394,22 +394,22 @@
 
 									int main()
 									{
-								      //Not-so-easy way: filepath is in form of string
-								      string filepath;
-								      cin >> filepath;
+											//Not-so-easy way: filepath is in form of string
+											string filepath;
+											cin >> filepath;
 
-								      //converts string to file path
-    							      fs::path fpath(filepath);
+											//converts string to file path
+											fs::path fpath(filepath);
 
-    								   //finds and creates directories upto the parent path
-        								fs::create_directories(fpath.parent_path());
+											//finds and creates directories upto the parent path
+											fs::create_directories(fpath.parent_path());
 
-        								//creates the file
-        								ofstream ofs(fpath);
+											//creates the file
+											ofstream ofs(fpath);
 
-        								ofs.close();
-									
-								      return EXIT_SUCCESS;
+											ofs.close();
+
+											return EXIT_SUCCESS;
 									}
 								</code>
 							</pre>
@@ -432,25 +432,25 @@
 
 									int main()
 									{
-								      string filepath, s;
-								      cin >> filepath;
+											string filepath s;
+											cin >> filepath;
 
-    									//converts string to file path
-    									fs::path fpath(filepath);
+											//converts string to file path
+											fs::path fpath(filepath);
 
-    									//retrieves only the file name
-    									const string file = fpath.filename();
+											//retrieves only the file name
+											const string file = fpath.filename();
 
-    									//opens the file in read mode
-    									//NOTE: freopen takes a constant c-style string as it's parameter.
-    									//Thus, the file name is converted to a c-style string.
-    									freopen(file.c_str(), "r", stdout);
+											//opens the file in read mode
+											//NOTE: freopen takes a constant C-style string as it's parameter.
+											//Thus, the file name is converted to a C-style string.
+											freopen(file.c_str(), "r", stdout);
 
-    									//reads the string from the file and prints it
-    									cin >> s;
-    									cout << s << endl;
-									
-										return EXIT_SUCCESS;
+											//reads the string from the file and prints it
+											cin >> s;
+											cout << s << endl;
+
+											return EXIT_SUCCESS;
 									}
 								</code>
 							</pre>
@@ -472,33 +472,33 @@
 
 									int main()
 									{
-								     string filepath;
-								      cin >> filepath;
+											string filepath;
+											cin >> filepath;
 
-								      //converts string to file path
-    									fs::path fpath(filepath);
+											//converts string to file path
+											fs::path fpath(filepath);
 
-    									//retrieves the filename
-        								const string file = fpath.filename();
+											//retrieves the filename
+											const string file = fpath.filename();
 
-    									//creates directory if not present already
-    									if(!(fs::exists(filepath)))
-    									{
-        									fs::create_directories(fpath.parent_path());
+											//creates directory (if not present already)
+											if(!(fs::exists(filepath)))
+											{
+													fs::create_directories(fpath.parent_path());
 
-        									//creates a file
-        									ofstream ofs(fpath);
+													//creates a file
+													ofstream ofs(path);
 
-        									ofs.close();
-    									}
+													ofs.close();
+											}
 
-        								//opens the file in write mode
-        								freopen(file.c_str(), "w", stdout);
+											//opens the file in write mode
+											freopen(file.c_str(), "w", stdout);
 
-        								//write to the file
-        								cout << data << endl;
-									
-										return EXIT_SUCCESS;
+											//write to the file
+											cout << data << endl;
+
+											return EXIT_SUCCESS;
 									}
 								</code>
 							</pre>
@@ -519,13 +519,14 @@
 
 									int main()
 									{
-								      string filepath;
-								      cin >> filepath;
+											string filepath;
+											cin >> filepath;
 
-								      //Works irrespective of the argument being a string or a filepath
-								      fs::remove(filepath);
-									
-						            return EXIT_SUCCESS;
+											//Works irrespective of the argument being a string or a filepath
+
+											fs::remove(filepath);
+
+											return EXIT_SUCCESS;
 									}
 								</code>
 							</pre>
