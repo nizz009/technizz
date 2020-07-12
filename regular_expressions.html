@@ -58,7 +58,115 @@
 				</p>
 			</p>
 
-			
+			<h2>Construction of Regular Expressions</h2>
+			<p>As stated earlier, regex is made from certain rules to represent other strings. Thus, the first step is to know and understand the various special components or characters for representating regular expressions.</p>
+
+			<h3>Special Characters/ Operations:</h3>
+			<p>
+				The special characters or operations are used to construct regex in a concised manner and to make it represent a larger group of strings. These include:
+
+				<ol>
+					<li>
+						<h4>Boolean "or" ('|'):</h4>
+						<p>
+							A string satisfying any one of the expressions on either side of the 'or' operator is said to match the regex.
+
+							<h6>Example:</h6> 'grey' and 'gray' both match <i>'grey|gray'</i>.
+						</p>
+					</li>
+					<li>
+						<h4>Groupings:</h4>
+						<p>
+							Groupings are used to group characters in order to define scope and precedence of operators or represent a particular set of characters at once. They are of variosu types but the two most important/used types are:
+
+							<ul>
+								<li>
+									<h5>Parenthesis ('(...)'):</h5>
+									They are used to define scope and precedence of operators.
+									<br>
+									<h6>Example:</h6> <i>'grey|gray'</i> can also be written as <i>'gr(e|a)y'</i>.
+								</li>
+								<li>
+									<h5>Sqaure brackets ('[...]'):</h5>
+									They are used to represent a set of characters.
+									<br>
+									<h6>Examples:</h6>
+									<br>
+									1. <i>'grey|gray'</i> can also be written as <i>'gr[a, e]y'</i>.
+									<br>
+									2. <i>'person[1-9]'</i> matches with 'person1', 'person2', and so on upto 'person9'.
+									<br>
+									<h6>NOTE:</h6> [^...] matches the strings that do NOT contain the characters in the square brackets at the given place.
+									<br>
+									<h6>Example:</h6> <i>'person[1-9]'</i> matches with 'person0', 'personx', etc. but NOT with person1, person2, and so on till person 9.
+								</li>
+							</ul>
+						</p>
+					</li>
+					<li>
+						<h4>Wildcard ('.'):</h4>
+						<p>
+							This is a special character that is really special as it can refer to anything. It can match with any alphabet, number, or symbol.
+							<h6>Example:</h6> <i>'gr.y'</i> can match with 'grey', 'grby', 'gr5y', 'gr$y' etc.
+						</p>
+					</li>
+					<li>
+						<h4>Quantifiers:</h4>
+						<p>
+							As the name suggests, quantifiers are used to "quantify" something and in this case, they are used to quantify characters. There are a number of quantifiers used for various purposes such as:
+
+							<ul>
+								<li>
+									<h5>'?'' :</h5> Represents zero or one occurences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'he?y'</i> matches both 'hy' (zero occurrences of 'e' (character preceding '?')) and 'hey' (one occurrence of 'e') but not 'heey' (more than one occurrences of 'e').
+								</li>
+								<li>
+									<h5>'*' :</h5> Represents zero or more occurrences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'hel?o'</i> matches 'heo', 'helo', 'hello', 'helllo', etc.
+								</li>
+								<li>
+									<h5>'+' :</h5> Represents one or more occurrences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'hel?o'</i> matches 'helo', 'hello', 'helllo', etc. but not 'heo'.
+								</li>
+								<li>
+									<h5>{ n } :</h5> Represents exactly 'n' occurrences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'hel{2}o'</i> matches only 'hello'.
+								</li>
+								<li>
+									<h5>{min, } :</h5> Represents atleast 'min' number of occurrences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'hel{1, }o'</i> matches 'helo', 'hello', 'hellllo', etc.
+								</li>
+								<li>
+									<h5>{min, max}</h5> Represents atleast 'min' and atmost 'max' number of occurrences of preceding character.
+									<br>
+									<h6>Example:</h6> <i>'hel{1, 2}o'</i> matches only 'helo' and hello'.
+								</li>
+							</ul>
+						</p>
+					</li>
+
+					<li>
+						<h4>Escape Characters:</h4>
+						<p>
+							Now that we know about the work of operators like '*', '+', etc., the question which arises is: <em>What if we want to search for strings containing those special characters?</em> Obviously, the compiler will treat them as operators and assign them their jobs instead of treating them as characters required in searching. This is where escape characters make their heroic entrance.
+						</p>
+
+						<p>
+							In order to use the special characters, the character are preceded by a backslash ('\').
+							<br>
+							<h6>Example:</h6> <i>'hi\*there'</i> represents 'hi*there'.
+						</p>
+					</li>
+				</ol>	 
+			</p>
+
+			<h2>Regex in Python</h2>
+			<p>This section will be updated soon! Sorry for the incovenience.</p>
 		</section>
 
 		<!--footer-->
