@@ -28,8 +28,8 @@
       				</li>
     			</ul>
   			</div>
-  			<a class="contact" href="https://www.linkedin.com/in/nirali-sahoo-11d2001y08m/" target="_blank" title="LinkedIn"><img src="Assets/Icons/linkedin.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
-  			<a class="contact" href="https://github.com/nizz009" target="_blank" title="Github"><img src="Assets/Icons/github.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+  			<a class="contact" href="https://www.linkedin.com/in/nirali-sahoo-11d2001y08m/" target="_blank" title="LinkedIn"><img src="Assets/Icons/linkedin.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+  			<a class="contact" href="https://github.com/nizz009" target="_blank" title="Github"><img src="Assets/Icons/github.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
 		</nav>
 
 		<!--Glossary
@@ -166,7 +166,129 @@
 			</p>
 
 			<h2>Regex in Python</h2>
-			<p>This section will be updated soon. Sorry for the incovenience.</p>
+			<p>As stated above, some programming languages need to import regex as a library and as a matter of fact, Python is one of them. In Python, we import it using the <code id="program" class="language-python">import re</code> code. Perhaps, the most important use of <code id="program" class="language-python">re library</code> is the extraction of data. Now, as we learn the proper way for extracting data, we will encounter many functions, and they are listen below:</p>
+
+			<h3>re.search() :</h3>
+			<p>This function is like the <a href="https://www.tutorialspoint.com/python/string_find.htm"><code id="program" class="language-python">find()</code></a> function in Python. It returns a <em>boolean</em> value (True if the substring being searched is present, and false otherwise).</p>
+
+			<h5>Example 1: Using regex as parameter:</h5>
+				<pre>
+					<code id="program" class="language-python">
+						import re
+
+						paragraph = ["Hello!", "Welcome to Technizz", "Nice to meet you"]
+
+						for line in paragraph:
+							#If line starts from 'N':
+							if re.search('^Nice', line):
+								print(line)
+							if re.search('^Technizz', line):
+								print(line)
+					</code>
+				</pre>
+
+				Output:
+				<pre>
+					<code id="program" class="language-python">
+						Nice to meet you
+
+						#Doesn't print the second line as it doesn't start from 'T'.
+					</code>
+				</pre>
+
+			<h5>Example 2: Without regex as parameter:</h5>
+			<h6>Note:</h6> This program is to show the resemblance of the function with <code id="program" class="language-python">find()</code> function.
+
+				<pre>
+					<code id="program" class="language-python">
+						import re
+
+						paragraph = ["Hello!", "Welcome to Technizz", "Nice to meet you"]
+
+						for line in paragraph:
+							#If line starts from 'N':
+							if re.search('Technizz', line):
+								print(line)
+					</code>
+				</pre>
+
+				Output:
+				<pre>
+					<code id="program" class="language-python">
+						#This line contains the word "Technizz" and hence is printed.
+						Welcome to Technizz
+					</code>
+				</pre>
+
+			<h3>re.findall():</h3>
+			This function finds all the different occurrences of the substrings that match the regex and returns a <em>list</em>.
+
+				<pre>
+					<code id="program" class="language-python">
+						import re
+
+						line = "There are 12 months and 365/366 days in 1 year."
+
+						#Find the substring which contains ATLEAST one digit from 0 to 9.
+						y = re.findall("[0-9]+", line)						
+						print(y)
+					</code>
+				</pre>
+
+				Output:
+				<pre>
+					<code id="program" class="language-python">
+						#Prints only the numbers and NOT the characters (here '/') surrounding them.
+						['12', '365', '366', '1']
+					</code>
+				</pre>
+
+				<h4>!!! Greedy Matching:</h4>
+				<p>Those exclamation marks show how important this is as not considering this topic while writing a program can bring unwanted results.</p>
+				<p>Though from the above example, <code id="program" class="language-python">re.findall()</code> may seem to be 'precise' on what it includes in the list, it isn't. Let's consider the following example:</p>
+
+				<pre>
+					<code id="program" class="language-python">
+						import re
+
+						line1 = "Welcome to: Technizz: Nice to meet you"
+
+						y = re.findall("^W.+:", line1)
+						print(y)
+					</code>
+				</pre>
+
+				Output:
+				<pre>
+					<code id="program" class="language-python">
+						#Expected :- "Welcome to:" ; the output received:-
+						['Welcome to: Technizz:']
+					</code>
+				</pre>
+
+			<p>Though we would generally expect it to stop searching after the condition of regex is satisfied for the first time, it does not. It expands it's search in the forward (as in this case) and in the backward (if possible) directions and finds the <em>largest possible match</em> (maybe it simply wants to prove it's dedication and hard-work).</p>
+
+			<h5>Converting it to "not-greedy":</h5>
+			<p>This is done using the '?' symbol in the following way:</p>
+
+				<pre>
+					<code id="program" class="language-python">
+						import re
+
+						line1 = "Welcome to: Technizz: Nice to meet you"
+
+						y = re.findall("^W.+?:", line1)
+						print(y)
+					</code>
+				</pre>
+
+				Output:
+				<pre>
+					<code id="program" class="language-python">
+						#Stops after the after finding the first match.
+						['Welcome to:']
+					</code>
+				</pre>
 		</section>
 
 		<!--footer-->
