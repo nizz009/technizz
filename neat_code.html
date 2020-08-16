@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Neat Code (Indentation)</title>
+		<link rel="stylesheet" href="Assets/Stylesheets/3rd party/bootstrap.min.css">
+		<link rel="stylesheet" href="Assets/Stylesheets/3rd party/prism.css">
+		<link rel="stylesheet" href="Assets/Stylesheets/main.css">
+		<script type="text/javascript" src="Assets/Scripts/3rd party/prism.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="Assets/Icons/logo.PNG">
+		<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bai+Jamjuree&family=Barlow+Condensed&family=Cairo:wght@600&family=Gruppo&family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!--Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  			<span class="navbar-brand">Technizz</span>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  			</button>
+
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+    				<li class="nav-item">
+        				<a class="nav-link" href="index.html">About</a>
+     	 			</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="topics.html">Topics</a>
+      				</li>
+    			</ul>
+  			</div>
+  			<a class="contact" href="https://www.linkedin.com/in/nirali-sahoo-11d2001y08m/" target="_blank" title="LinkedIn"><img src="Assets/Icons/linkedin.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+  			<a class="contact" href="https://github.com/nizz009" target="_blank" title="Github"><img src="Assets/Icons/github.PNG" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+		</nav>
+
+		<!--Glossary
+			h1 - Name of topic/article
+			h2 - Main headings
+			h3 - Sub headings
+			h4 - Sub-sub headings
+			h5 - Sub-sub-sub headings
+			h6 - Notes/ Sub-sub-sub headings-->
+			
+		<!--Heading-->
+		<h1>Neat Code (Proper Indentation)</h1>
+
+		<!--Sections-->
+		<section class="sortarticle">
+			<h2>Introduction</h2>
+			<p>
+				Indentation, in its definition, "is an empty space at the beginning of a line to signal the start of a new paragraph". Now, why is this so important that I decided to make a page on this? That's because, no matter how silly it sounds, it's one of the most important concepts of programming that mostly everyone screws up with.
+			</p>
+			<p>
+				Note that I mentioned <em>proper indentation</em> and not simply indentation. Proper indentation, for me, means a code with proper spacing, allignment and certain rules.
+			</p>
+
+			<h3>Importance:</h3>
+			<ul>
+				<li><h6>Super helpful for debugging:</h6> Maintaining proper space can help to find errors easily.</li>
+				<li><h6>Increased Readability:</h6> Other programmers, or even the future you gets to understand the code more properly.</li>
+			</ul>
+			<p>
+				These aren't all but well, I guess that's enough for the boring theory for now.<br>
+				<h6>Note:</h6> No program is the best, all the things written here are my own personal views.
+			</p>
+
+			<h2>Basic Rules</h2>
+			<ol>
+				<li>
+					<h3>Proper spacing:</h3>
+					<p>
+						A cramped up code is realy confusing and decreases its readability. Though it may be sacrificed in certain cases like in microprocessors it is still essential in most of the situations or programs.
+					</p>
+				</li>
+				<li>
+					<h3>Nesting and allignment:</h3> 
+					<p>
+						The nesting should be done in a way which makes it easy to find the beginning and the ending of loops or condition statements.
+					</p>
+				</li>
+				<li>
+					<h3><strong>Stick to your indentation style:</strong></h3> 
+					<p>
+						Now, this is the most important one. Changing your style repeatedly in a single program not only makes it look haphazard but also makes it confusing and can even destroy the interest of the reader.
+					</p>
+				</li>
+			</ol>
+
+			Congo! We are done with the boring theory part. So, the next section describes a small example covering all the rules above.
+
+			<h2>Example</h2>
+			<p><h6>Note:</h6> Now, writing examples in all the laguages is next to impossible so I will be using C but don't worry, you don't need to be a C programmer to get the basic idea.</p>
+
+			<h3>Without proper indentation:</h3>
+			<pre>
+				<code id="program" class="language-c">
+					#include &lt;stdio&gt;
+					#include &lt;stdlib&gt;
+
+					int main() {
+						char random_char; int random_num1;
+						int random_num2;
+						scanf("%c%d%d", &random_char,&random_num1,&random_num2);
+						//Note the change in placement style of the braces.
+						if(random_num1>0)
+						{
+									if(random_num2>0) {
+									printf("%c", random_char);
+							}
+
+						}
+						return EXIT_SUCCESS;
+					}
+				</code>
+			</pre>
+
+			<h3>With proper indentation:</h3>
+			<pre>
+				<code id="program" class="language-c">
+					#include &lt;stdio&gt;
+					#include &lt;stdlib&gt;
+
+					int main()
+					{
+							/*Preferred: Variables of one data type in one line 
+							(or even better, each variable on a different line but some people don't prefer that).*/
+							//Random tip: Initialising each variable helps in finding bugs easily.
+							char random_char = '\0';
+							int random_num1 = 0, random_num2 = 0;
+
+							//Preferred: Proper spacing between two different operations (here, defining variables and takign input).
+							//Also, note the spaces between the different variables.
+							scanf("%c %d %d", &random_char, &random_num1, &random_num2);
+
+							//Note the proper spacing between the nested conditions which makes finding the opening and closing braces easier.
+							//Also note the spaces between the  and the operands.
+							if(random_num1 > 0)
+							{
+									if(random_num2 > 0)
+									{
+											printf("%c", random_char);
+									}
+							}
+
+							return EXIT_SUCCESS;
+					}
+				</code>
+			</pre>
+
+			<p>So, we are finally done with the thory of indentation! Again, all of these were my own personal views. The final choice of how to indent your code lies on you. So I hope this article was of use to you.</p>
+		</section>
+
+		<!--footer-->
+		<footer>
+			<small>&copy; All rights reserved.</small>
+		</footer>
+	</body>
+</html>
